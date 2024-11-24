@@ -80,7 +80,6 @@ const contests: Contest[] = [
 ];
 
 export default function Contests() {
-
     return (
         <div style={{ display: "flex", justifyContent: "center" }}>
             <div className={styles.container}>
