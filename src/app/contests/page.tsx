@@ -5,77 +5,95 @@ import styles from "./page.module.css";
 
 interface Contest {
     name: string;
+    description: string;
     host: string;
     hostURL: string;
-    address: string;
+    type: string;
+    participants: string;
     start: Date;
     end: Date;
 }
 
 const contests: Contest[] = [
     {
-        name: "Canary Contest",
+        name: "canary-o1",
         host: "ndbtea",
         hostURL: "https://ndbtea.xyz",
-        address: "UQBKplAgUpM8oTuQftmU3Cc7lB-gxDqACP0cfxmYZZkejvE7",
-        start: new Date("2023-01-12T12:00:00"),
-        end: new Date("2023-01-14T18:00:00"),
+        type: "Training",
+        participants: "129 / 300",
+        start: new Date("2024-01-12T12:00:00"),
+        end: new Date("2024-01-14T18:00:00"),
+        description: "A training contest to enhance your skills in competitive programming."
     },
     {
-        name: "Hackathon",
+        name: "hackathon",
         host: "reilix",
         hostURL: "https://github.com/re1l1x",
-        address: "UQCR1zBW4DUjLwmq-CQqHVHuqYtqW-u_isDJ5SHQKhpL21nR",
-        start: new Date("2023-01-12T12:00:00"),
-        end: new Date("2023-01-14T18:00:00"),
+        type: "Free",
+        participants: "129 / 300",
+        start: new Date("2024-01-12T12:00:00"),
+        end: new Date("2024-01-14T18:00:00"),
+        description: "Join us for a weekend of coding, collaboration, and creativity."
     },
     {
-        name: "Game Jam o1",
+        name: "canary",
         host: "whoo",
         hostURL: "https://devcommunity.org",
-        address: "UQCR1zBW4DUjLwmq-CQqHVHuqYtqW-u_isDJ5SHQKhpL21nS",
-        start: new Date("2023-01-12T12:00:00"),
-        end: new Date("2023-01-14T18:00:00"),
+        type: "Paid",
+        participants: "129 / 300",
+        start: new Date("2024-01-12T12:00:00"),
+        end: new Date("2024-01-14T18:00:00"),
+        description: "A paid contest focusing on advanced algorithms and problem-solving."
     },
     {
-        name: "Design Sprint",
+        name: "marmot contest #3",
         host: "no/one",
         hostURL: "https://innovatorsinc.com",
-        address: "UQCR1zBW4DUjLwmq-CQqHVHuqYtqW-u_isDJ5SHQKhpL21nT",
-        start: new Date("2023-01-12T12:00:00"),
-        end: new Date("2023-01-14T18:00:00"),
+        type: "Paid",
+        participants: "129 / 300",
+        start: new Date("2024-01-12T12:00:00"),
+        end: new Date("2024-01-14T18:00:00"),
+        description: "Challenge yourself in this exciting paid contest with great prizes."
     },
     {
-        name: "Comp. Sci. Basics",
+        name: "trenbolon contest",
         host: "ccc",
         hostURL: "https://creativeminds.com",
-        address: "UQCR1zBW4DUjLwmq-CQqHVHuqYtqW-u_isDJ5SHQKhpL21nU",
-        start: new Date("2023-01-12T12:00:00"),
-        end: new Date("2023-01-14T18:00:00"),
+        type: "Training",
+        participants: "129 / 300",
+        start: new Date("2024-01-12T12:00:00"),
+        end: new Date("2024-01-14T18:00:00"),
+        description: "A training contest designed to prepare participants for future challenges."
     },
     {
-        name: "Hack-AI",
+        name: "hack-ai",
         host: "ccc",
         hostURL: "https://futuretech.com",
-        address: "UQCR1zBW4DUjLwmq-CQqHVHuqYtqW-u_isDJ5SHQKhpL21nV",
-        start: new Date("2023-01-12T12:00:00"),
-        end: new Date("2023-01-14T18:00:00"),
+        type: "Paid",
+        participants: "129 / 300",
+        start: new Date("2024-01-12T12:00:00"),
+        end: new Date("2024-01-14T18:00:00"),
+        description: "A paid contest focused on AI and machine learning challenges."
     },
     {
         name: "web",
         host: "ccc",
         hostURL: "https://webwizards.com",
-        address: "UQCR1zBW4DUjLwmq-CQqHVHuqYtqW-u_isDJ5SHQKhpL21nW",
-        start: new Date("2023-01-12T12:00:00"),
-        end: new Date("2023-01-14T18:00:00"),
+        type: "Free",
+        participants: "129 / 300",
+        start: new Date("2024-01-12T12:00:00"),
+        end: new Date("2024-01-14T18:00:00"),
+        description: "A free contest for web development enthusiasts."
     },
     {
-        name: "Mobile App Challenge",
+        name: "canary",
         host: "ccc",
         hostURL: "https://appinnovators.com",
-        address: "UQCR1zBW4DUjLwmq-CQqHVHuqYtqW-u_isDJ5SHQKhpL21nX",
-        start: new Date("2023-01-12T12:00:00"),
-        end: new Date("2023-01-14T18:00:00"),
+        type: "Free",
+        participants: "129 / 300",
+        start: new Date("2024-01-12T12:00:00"),
+        end: new Date("2024-01-14T18:00:00"),
+        description: "A free contest aimed at fostering innovation in app development."
     },
 ];
 
@@ -84,7 +102,7 @@ export default function Contests() {
     return (
         <div style={{ display: "flex", justifyContent: "center" }}>
             <div className={styles.container}>
-                <h1>Public</h1>
+                <h1 className="text-[32px] font-bold text-black-900">Public competitions</h1>
                 <ContestList contests={contests} />
             </div>
         </div>
