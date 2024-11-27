@@ -1,14 +1,12 @@
+import { Header } from "@/components/header";
+import { Footer } from "@/components/footer";
 import type { Metadata } from "next";
-import { TonConnectProvider } from "@/components/TonConnectProvider";
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
-import { Notification } from "@/components/Notification";
-import AlertTriangle from "@/icons/AlertTriangle";
 import "./globals.css";
+import { TonConnectProvider } from "@/components/ton-connect-provider";
 
 export const metadata: Metadata = {
-  title: "Cascade",
-  description: "Host and participate in programming contests",
+  title: "Cascade Contests",
+  description: "Compete, win & improve",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
@@ -16,12 +14,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <html lang="en">
       <TonConnectProvider>
         <body>
-          <Notification
-            type="warning"
-            label="This is an early development build. But still be as strict as possible about any bugs and not implemented things"
-            link="https://github.com/cascadecontests/frontend/issues/new?assignees=&labels=&projects=&template=bug_report.md&title="
-            icon={<AlertTriangle />}
-          />
           <Header />
           {children}
           <Footer />
