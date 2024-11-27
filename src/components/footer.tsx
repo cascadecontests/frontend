@@ -4,9 +4,9 @@ import { Mail } from "lucide-react";
 
 const Footer = () => {
     return (
-        <footer className="flex flex-col items-center bg-white-50">
+        <footer className="flex flex-col items-center bg-white-50 mt-8">
             <hr className="w-[65vw]" />
-            <div className="flex justify-center items-center justify-between w-[65vw] mt-4 mb-4">
+            <div className="flex justify-center items-center justify-between w-[65vw] mt-6 mb-6">
                 <div>
                     <div>Created by <Link href='https://github.com/jus1d' className="transition duration-300 font-semibold hover:text-blue-700">@ndbtea</Link></div>
                 </div>
