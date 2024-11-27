@@ -1,8 +1,8 @@
+import { TonConnectProvider } from "@/components/ton-connect-provider";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import type { Metadata } from "next";
 import "./globals.css";
-import { TonConnectProvider } from "@/components/ton-connect-provider";
 
 export const metadata: Metadata = {
   title: "Cascade Contests",
@@ -15,7 +15,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <TonConnectProvider>
         <body>
           <Header />
-          {children}
+          <main>
+            {children}
+          </main>
           <Footer />
         </body>
       </TonConnectProvider>
