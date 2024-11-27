@@ -14,10 +14,10 @@ const Header = () => {
                 </Link>
                 <div className="flex gap-10">
                     <Button asChild variant="ghost">
-                        <Link href="/contests" className="text-base">Contests</Link>
+                        <Link href="/contests" className="text-[16px] font-semibold">Contests</Link>
                     </Button>
                     <Button asChild variant="ghost">
-                        <Link href="/ranks" className="text-base">Ranks</Link>
+                        <Link href="/leaderboard" className="text-[16px] font-semibold">Leaderboard</Link>
                     </Button>
                 </div>
                 <div className="w-[160px] flex justify-end">
