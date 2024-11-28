@@ -1,6 +1,6 @@
 import { useIsConnectionRestored, useTonConnectUI, useTonAddress, useTonWallet } from "@tonconnect/ui-react";
 import { LoaderCircle, WalletMinimal } from "lucide-react";
-import { Button } from "./ui/button";
+import { Button } from "@/components/ui/button";
 import React from "react";
 
 const TonConnectButton = () => {

@@ -1,0 +1,26 @@
+.container {
+    width: 1120px;
+}
+
+.name {
+    transition: 0.3s ease;
+    color: var(--gray-950);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.name:hover {
+    transition: 0.3s ease;
+    cursor: pointer;
+    color: var(--blue-700);
+}
+
+.link {
+    font-family: 'Rubik', sans-serif;
+    color: var(--blue-700);
+    text-decoration: none;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
