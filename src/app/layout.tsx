@@ -18,7 +18,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <body className="antialiased">
           <Notification
             type="warning"
-            message="This is an early development build. But still be as strict as possible about any bugs and not implemented things"
+            message="This is an early development build"
             href="https://github.com/cascadecontests/frontend/issues/new?assignees=&labels=&projects=&template=bug_report.md&title="
             icon={<AlertTriangle />}
           />

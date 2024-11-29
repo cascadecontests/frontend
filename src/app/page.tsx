@@ -1,10 +1,10 @@
 'use client';
 
 import { Card } from "@/components/card";
-import styles from "./page.module.css";
 import Computer from "@/icons/computer";
-import Coin from "@/icons/coin";
+import styles from "./page.module.css";
 import Brain from "@/icons/brain";
+import Coin from "@/icons/coin";
 
 export default function Home() {
   return (
@@ -17,12 +17,10 @@ export default function Home() {
           </div>
         </h1>
         <div className={styles.description}>
-          <div>
-            An open-source platform for <b>creating</b>, <b>hosting</b>
-          </div>
-          <div>
-            and <b>participating</b> in paid or training programming contests
-          </div>
+          <center>
+            An open-source platform for creating, hosting
+            and participating in paid or training programming contests
+          </center>
         </div>
         <h2 className={styles.cardsTitle}>
           Looking for your next step?
@@ -50,7 +48,7 @@ export default function Home() {
             link="/contests/?filter=training"
           />
         </div>
-      </main>
-    </div>
+      </main >
+    </div >
   );
 }

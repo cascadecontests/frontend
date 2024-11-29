@@ -27,7 +27,9 @@ export const Notification = (props: Props) => {
             target="_blank" rel="noopener noreferrer"
             className={`${styles.container} ${props.type === 'warning' ? styles.warning : styles.info}`}
         >
-            {props.icon}
+            <div className={styles.icon}>
+                {props.icon}
+            </div>
             {props.message}
             <div className={styles.arrow}>
                 <RightArrow />
