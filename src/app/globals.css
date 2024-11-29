@@ -5,7 +5,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* html {
+html {
   background-color: white;
   color: black;
 }
@@ -13,7 +13,7 @@
 html.dark {
   background-color: black;
   color: white;
-} */
+}
 
 @layer base {
   :root {
@@ -113,16 +113,14 @@ html.dark {
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%
   }
-}
 
-@layer base {
   * {
-    @apply border-border;
+    /* @apply border-border; */
     box-sizing: border-box;
   }
 
   body {
     margin: 0;
-    @apply bg-background text-foreground;
+    /* @apply bg-background text-foreground; */
   }
 }
