@@ -16,6 +16,8 @@ import {
     HoverCardTrigger,
 } from "@/components/ui/hover-card"
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { useEffect, useState } from "react";
 
 interface Contest {
     name: string;
@@ -112,6 +114,8 @@ const contests: Contest[] = [
 ];
 
 export default function Contests() {
+    const [paidState, setPaidState] = useState<"paid" | "training" | null>(null);
+
     const formatDate = (date: Date) => {
         const day = date.getDate();
         const year = date.getFullYear();
@@ -126,10 +130,80 @@ export default function Contests() {
         return `${day} ${month}, ${year}`;
     }
 
+    const filterContests = (): Contest[] => {
+        if (!paidState) {
+            return contests;
+        }
+
+        return contests.filter(contest => contest.type.toLowerCase() == paidState);
+    }
+
+    const addGetParameterToCurrentUrl = (key: string, value: string) => {
+        const href = window.location.href;
+        const url = new URL(href);
+        url.searchParams.set(key, value);
+
+        window.history.pushState({}, '', url);
+    }
+
+    const removeGetParameterFromCurrentUrl = (key: string) => {
+        const href = window.location.href;
+        const url = new URL(href);
+        url.searchParams.delete(key);
+
+        window.history.pushState({}, '', url);
+    }
+
+    const getParameterFromCurrentUrl = (key: string): string | null => {
+        const href = window.location.href;
+        const url = new URL(href);
+        const params = new URLSearchParams(url.search);
+
+        return params.get(key);
+    }
+
+    useEffect(() => {
+        const filter = getParameterFromCurrentUrl("filter");
+        if (filter === "paid" || filter === "training") {
+            setPaidState(filter);
+        }
+    }, []);
+
+
     return (
         <div style={{ display: "flex", justifyContent: "center" }}>
             <div className={styles.container}>
                 <h1 className="text-[32px] font-bold mb-3">Public competitions</h1>
+                <div className="flex flex-row gap-[15px] mb-3">
+                    <Button
+                        variant={paidState === "paid" ? "colorfullblue" : "outline"}
+                        onClick={() => {
+                            if (paidState === "paid") {
+                                removeGetParameterFromCurrentUrl("filter");
+                                setPaidState(null);
+                            } else {
+                                addGetParameterToCurrentUrl("filter", "paid");
+                                setPaidState("paid");
+                            }
+                        }}
+                    >
+                        Paid
+                    </Button>
+                    <Button
+                        variant={paidState === "training" ? "colorfullblue" : "outline"}
+                        onClick={() => {
+                            if (paidState === "training") {
+                                removeGetParameterFromCurrentUrl("filter")
+                                setPaidState(null);
+                            } else {
+                                addGetParameterToCurrentUrl("filter", "training");
+                                setPaidState("training");
+                            }
+                        }}
+                    >
+                        Training
+                    </Button>
+                </div>
                 <Table>
                     <TableHeader>
                         <TableRow>
@@ -144,7 +218,7 @@ export default function Contests() {
                     </TableHeader>
                     <TableBody>
                         {
-                            contests.map((contest, idx) => {
+                            filterContests().map((contest, idx) => {
                                 return (
                                     <TableRow>
                                         <TableCell>
