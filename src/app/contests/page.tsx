@@ -19,6 +19,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
 import { Separator } from "@/components/ui/separator";
+import Head from "next/head";
 
 interface Contest {
     name: string;
@@ -173,6 +174,11 @@ export default function Contests() {
 
     return (
         <div style={{ display: "flex", justifyContent: "center" }}>
+            <Head>
+                <title>
+                    Contests
+                </title>
+            </Head>
             <div className={styles.container}>
                 <h1 className="text-[32px] font-bold mb-3">Public competitions</h1>
                 <div className="flex flex-row gap-[15px] mb-3">

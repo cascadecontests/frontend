@@ -1,5 +1,3 @@
-'use client';
-
 import { Card } from "@/components/card";
 import Computer from "@/icons/computer";
 import styles from "./page.module.css";
