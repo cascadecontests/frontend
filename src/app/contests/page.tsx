@@ -18,6 +18,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
+import { Separator } from "@/components/ui/separator";
 
 interface Contest {
     name: string;
@@ -36,7 +37,7 @@ const contests: Contest[] = [
         host: "ndbtea",
         hostURL: "https://ndbtea.xyz",
         type: "Training",
-        participants: "129 / 300",
+        participants: "129",
         start: new Date("2024-01-12T12:00:00"),
         end: new Date("2024-01-14T18:00:00"),
         description: "A training contest to enhance your skills in competitive programming."
@@ -46,7 +47,7 @@ const contests: Contest[] = [
         host: "reilix",
         hostURL: "https://github.com/re1l1x",
         type: "Free",
-        participants: "129 / 300",
+        participants: "129",
         start: new Date("2024-01-12T12:00:00"),
         end: new Date("2024-01-14T18:00:00"),
         description: "Join us for a weekend of coding, collaboration, and creativity."
@@ -56,7 +57,7 @@ const contests: Contest[] = [
         host: "whoo",
         hostURL: "https://devcommunity.org",
         type: "Paid",
-        participants: "129 / 300",
+        participants: "129",
         start: new Date("2024-01-12T12:00:00"),
         end: new Date("2024-01-14T18:00:00"),
         description: "A paid contest focusing on advanced algorithms and problem-solving."
@@ -66,7 +67,7 @@ const contests: Contest[] = [
         host: "no/one",
         hostURL: "https://innovatorsinc.com",
         type: "Paid",
-        participants: "129 / 300",
+        participants: "129",
         start: new Date("2024-01-12T12:00:00"),
         end: new Date("2024-01-14T18:00:00"),
         description: "Challenge yourself in this exciting paid contest with great prizes."
@@ -76,7 +77,7 @@ const contests: Contest[] = [
         host: "ccc",
         hostURL: "https://creativeminds.com",
         type: "Training",
-        participants: "129 / 300",
+        participants: "129",
         start: new Date("2024-01-12T12:00:00"),
         end: new Date("2024-01-14T18:00:00"),
         description: "A training contest designed to prepare participants for future challenges."
@@ -86,7 +87,7 @@ const contests: Contest[] = [
         host: "ccc",
         hostURL: "https://futuretech.com",
         type: "Paid",
-        participants: "129 / 300",
+        participants: "129",
         start: new Date("2024-01-12T12:00:00"),
         end: new Date("2024-01-14T18:00:00"),
         description: "A paid contest focused on AI and machine learning challenges."
@@ -96,7 +97,7 @@ const contests: Contest[] = [
         host: "ccc",
         hostURL: "https://webwizards.com",
         type: "Free",
-        participants: "129 / 300",
+        participants: "129",
         start: new Date("2024-01-12T12:00:00"),
         end: new Date("2024-01-14T18:00:00"),
         description: "A free contest for web development enthusiasts."
@@ -106,7 +107,7 @@ const contests: Contest[] = [
         host: "ccc",
         hostURL: "https://appinnovators.com",
         type: "Free",
-        participants: "129 / 300",
+        participants: "129",
         start: new Date("2024-01-12T12:00:00"),
         end: new Date("2024-01-14T18:00:00"),
         description: "A free contest aimed at fostering innovation in app development."
@@ -176,7 +177,7 @@ export default function Contests() {
                 <h1 className="text-[32px] font-bold mb-3">Public competitions</h1>
                 <div className="flex flex-row gap-[15px] mb-3">
                     <Button
-                        variant={paidState === "paid" ? "colorfullblue" : "outline"}
+                        variant={paidState === "paid" ? "colorfullblue" : "secondary"}
                         onClick={() => {
                             if (paidState === "paid") {
                                 removeGetParameterFromCurrentUrl("filter");
@@ -190,7 +191,7 @@ export default function Contests() {
                         Paid
                     </Button>
                     <Button
-                        variant={paidState === "training" ? "colorfullblue" : "outline"}
+                        variant={paidState === "training" ? "colorfullblue" : "secondary"}
                         onClick={() => {
                             if (paidState === "training") {
                                 removeGetParameterFromCurrentUrl("filter")
@@ -228,19 +229,18 @@ export default function Contests() {
                                         </TableCell>
                                         <TableCell>
                                             <HoverCard>
-                                                <HoverCardTrigger>
-                                                    <Link className={styles.name} href={contest.hostURL}>
-                                                        {contest.name}
-                                                    </Link>
+                                                <HoverCardTrigger className={styles.name} href={contest.hostURL}>
+                                                    {contest.name}
                                                 </HoverCardTrigger>
                                                 <HoverCardContent>
                                                     <div className="flex flex-col gap-4">
                                                         <h1 className="font-bold">{contest.name}</h1>
+                                                        <Separator />
                                                         <p>
                                                             {contest.description}
                                                         </p>
-                                                        <div>
-                                                            by <Link className={styles.link} href={contest.hostURL}>
+                                                        <div className="font-bold">
+                                                            Hosted by <Link className={styles.link} href={contest.hostURL}>
                                                                 {`@${contest.host}`}
                                                             </Link>
                                                         </div>
@@ -257,7 +257,19 @@ export default function Contests() {
                                         <TableCell>
                                             <Badge variant="outline">{contest.type}</Badge>
                                         </TableCell>
-                                        <TableCell>{contest.participants}</TableCell>
+                                        <TableCell>
+                                            <div className="flex flex-row gap-1">
+                                                <div className="font-semibold">
+                                                    {contest.participants}
+                                                </div>
+                                                <div>
+                                                    /
+                                                </div>
+                                                <div>
+                                                    300
+                                                </div>
+                                            </div>
+                                        </TableCell>
                                         <TableCell>{formatDate(contest.start)}</TableCell>
                                         <TableCell>{formatDate(contest.end)}</TableCell>
                                     </TableRow>
