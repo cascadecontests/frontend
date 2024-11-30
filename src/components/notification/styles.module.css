@@ -5,10 +5,10 @@
     gap: 10px;
     position: relative;
     width: 100vw;
-    height: 45px;
+    height: 40px;
     font-size: 16px;
     font-weight: 600;
-    color: var(--gray-50);
+    color: var(--white-50);
     text-decoration: none;
 }
 

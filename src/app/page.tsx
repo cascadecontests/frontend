@@ -1,13 +1,13 @@
-import { Card } from "@/components/card";
-import Computer from "@/icons/computer";
-import styles from "./page.module.css";
-import Brain from "@/icons/brain";
-import Coin from "@/icons/coin";
+import { Card } from '@/components/card';
+import Computer from '@/icons/computer';
+import styles from './page.module.css';
+import Brain from '@/icons/brain';
+import Coin from '@/icons/coin';
 
 export default function Home() {
   return (
     <div className={styles.page}>
-      <main>
+      <div>
         <h1 className={styles.title}>
           Cascade
           <div className={styles.gradient}>
@@ -16,8 +16,12 @@ export default function Home() {
         </h1>
         <div className={styles.description}>
           <center>
-            An open-source platform for creating, hosting
-            and participating in paid or training programming contests
+            <div>
+              An open-source platform for <b>creating</b>, <b>hosting</b>
+            </div>
+            <div>
+              and <b>participating</b> in paid or training programming contests
+            </div>
           </center>
         </div>
         <h2 className={styles.cardsTitle}>
@@ -46,7 +50,7 @@ export default function Home() {
             link="/contests/?filter=training"
           />
         </div>
-      </main >
-    </div >
+      </div>
+    </div>
   );
 }

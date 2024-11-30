@@ -1,0 +1,26 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    line-height: normal;
+    padding: 100px 0;
+}
+
+.title {
+    font-size: 130px;
+    color: var(--foreground);
+    font-weight: bold;
+}
+
+.separator {
+    background-color: var(--muted-background);
+    width: 260px;
+}
+
+.text {
+    font-size: 20px;
+    color: var(--muted-foreground);
+    font-weight: 600;
+    margin-top: 20px;
+}

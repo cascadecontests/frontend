@@ -16,7 +16,9 @@ export const Card = (props: Props) => {
     return (
         <Link href={props.link} className={styles.card}>
             <div className={styles.container}>
-                {props.icon}
+                <div className={styles.icon}>
+                    {props.icon}
+                </div>
                 <div className={styles.title}>
                     {props.title}
                 </div>

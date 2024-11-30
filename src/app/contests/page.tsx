@@ -174,13 +174,8 @@ export default function Contests() {
 
     return (
         <div style={{ display: "flex", justifyContent: "center" }}>
-            <Head>
-                <title>
-                    Contests
-                </title>
-            </Head>
             <div className={styles.container}>
-                <h1 className="text-[32px] font-bold mb-3">Public competitions</h1>
+                <h1 className="text-[32px] font-bold mb-3 text-foreground">Public competitions</h1>
                 <div className="flex flex-row gap-[15px] mb-3">
                     <Button
                         variant={paidState === "paid" ? "colorfullblue" : "secondary"}
@@ -229,7 +224,7 @@ export default function Contests() {
                                 return (
                                     <TableRow>
                                         <TableCell>
-                                            <div className="font-semibold">
+                                            <div className="font-semibold text-foreground">
                                                 {`${idx + 1}.`}
                                             </div>
                                         </TableCell>

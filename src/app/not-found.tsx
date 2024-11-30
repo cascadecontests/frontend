@@ -1,15 +1,17 @@
+import styles from './not-found.module.css';
+
 import { Separator } from "@/components/ui/separator"
 
 export default function NotFound() {
     return (
-        <div className="flex flex-col justify-center items-center mt-20 mb-40 leading-normal">
-            <div className="text-[130px] font-bold">
+        <div className={styles.container}>
+            <div className={styles.title}>
                 404
             </div>
-            <Separator className="w-[260px]" />
-            <div className="text-[20px] font-semibold mt-10">
+            <Separator className={styles.separator} />
+            <div className={styles.text}>
                 Where did you get this link?
             </div>
-        </div>
+        </div >
     );
 }

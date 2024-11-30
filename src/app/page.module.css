@@ -12,7 +12,7 @@
     margin-bottom: 0;
     font-size: 95px;
     font-weight: 700;
-    color: var(--gray-950);
+    color: var(--foreground);
     line-height: normal;
 }
 
@@ -29,7 +29,7 @@
     align-items: center;
     margin: 40px 0;
     font-size: 20px;
-    color: var(--gray-950);
+    color: var(--foreground);
 }
 
 .cardsTitle {
@@ -37,7 +37,7 @@
     margin-bottom: 20px;
     font-size: 40px;
     font-weight: 700;
-    color: var(--gray-950);
+    color: var(--foreground);
 }
 
 .cards {

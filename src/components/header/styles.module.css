@@ -8,14 +8,14 @@
     z-index: 100;
     top: 0;
     width: 100vw;
-    background-color: var(--gray-50);
+    background-color: var(--background);
 }
 
 .title {
     width: 164px;
     font-size: 20px;
     font-weight: 700;
-    color: var(--gray-950);
+    color: var(--foreground);
     text-decoration: none;
 }
 
@@ -25,13 +25,13 @@
     border-radius: 13px;
     font-size: 16px;
     font-weight: 600;
-    color: var(--gray-950);
+    color: var(--foreground);
     text-decoration: none;
 }
 
 .link:hover {
     transition: 0.3s;
-    background-color: var(--gray-200);
+    background-color: var(--muted-background);
 }
 
 .container {
